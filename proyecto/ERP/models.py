@@ -1,6 +1,22 @@
 
 from django.db import models
 
+class Pais(models.Model):
+    id_pais = models.IntegerField(db_column='Id_pais', primary_key=True)  
+    nombre = models.CharField(db_column='Nombre', unique=True, max_length=50, blank=True, null=True)  
+
+    class Meta:
+        db_table = 'Pais'
+
+class Departamento(models.Model):
+    id_departamento = models.IntegerField(db_column='Id_departamento', primary_key=True)  
+    nombre = models.CharField(db_column='Nombre', max_length=50, blank=True, null=True)  
+    id_pais = models.ForeignKey('Pais', db_column='Id_pais', blank=True, null=True)  
+
+    class Meta:
+        db_table = 'Departamento'
+        unique_together = (('id_pais', 'nombre'),)
+
 
 class Ciudad(models.Model):
     id_ciudad = models.IntegerField(db_column='Id_ciudad', primary_key=True)  
