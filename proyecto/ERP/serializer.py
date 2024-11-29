@@ -1,7 +1,17 @@
 from rest_framework import serializers
-from django.db import models
+#from django.db import models
 from .models import *
 
+
+class PaisSerializer(serializers.Serializer):
+    id_pais = serializers.IntegerField() 
+    nombre = serializers.CharField(max_length=50, allow_blank=False, allow_null=False)
+
+class DepartamentoSerializer(serializers.Serializer):
+    id_departamento = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=False, allow_null=False)
+    id_pais = serializers.IntegerField(allow_null=False)
+"""
 class PaisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pais
@@ -69,22 +79,22 @@ class ParqueoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Parqueo
         fields = '__all__'
-
+"""
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = '__all__'
-
+"""
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = '__all__'
-
+"""
 class EmpleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empleado
         fields = '__all__'
-
+"""
 class VehiculoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehiculo
@@ -124,3 +134,5 @@ class PagoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pago
         fields = '__all__'
+
+"""

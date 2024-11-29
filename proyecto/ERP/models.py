@@ -1,6 +1,6 @@
 
 from django.db import models
-#class Pais:
+"""#class Pais:
  #   def __init__(self, id_pais, nombre):
   #      self.id_pais = id_pais
    #     self.nombre = nombre
@@ -117,7 +117,7 @@ class Parqueo(models.Model):
     class Meta:
         db_table = 'Parqueo'
 
-
+"""
 class Usuario(models.Model):
     id_usuario = models.IntegerField(db_column='Id_usuario', primary_key=True)  
     nombre = models.CharField(db_column='Nombre', max_length=50, blank=True, null=True)  
@@ -129,29 +129,29 @@ class Usuario(models.Model):
     contrasena = models.CharField(db_column='Contraseña', max_length=50, blank=True, null=True)  
     fecha_ingreso = models.DateField(blank=True, null=True)
     fecha_salida = models.DateField(blank=True, null=True)
-    id_direccion = models.ForeignKey('Direccion', models.CASCADE, db_column='Id_direccion', blank=True, null=True)  
+    #id_direccion = models.ForeignKey('Direccion', models.CASCADE, db_column='Id_direccion', blank=True, null=True)  
 
     class Meta:
         db_table = 'Usuario'
 
 
 
-
+"""""
 class Cliente(models.Model):
     id_cliente = models.IntegerField(db_column='Id_cliente', primary_key=True)  
     id_usuario = models.ForeignKey('Usuario', models.CASCADE, db_column='Id_usuario', blank=True, null=True)  
 
     class Meta:
         db_table = 'Cliente'
-
+"""
 class Empleado(models.Model):
     id_empleado = models.IntegerField(db_column='Id_Empleado', primary_key=True)  
     id_usuario = models.ForeignKey('Usuario', models.CASCADE, db_column='Id_usuario', blank=True, null=True)  
-    id_sucursal = models.ForeignKey('Sucursal', models.CASCADE, db_column='Id_sucursal', blank=True, null=True)  
+    #id_sucursal = models.ForeignKey('Sucursal', models.CASCADE, db_column='Id_sucursal', blank=True, null=True)  
 
     class Meta:
         db_table = 'Empleado'
-
+"""
 class Vehiculo(models.Model):
     id_vehiculo = models.IntegerField(db_column='Id_Vehiculo', primary_key=True)  
     ano = models.IntegerField(db_column='Ano', blank=True, null=True)  
@@ -242,3 +242,4 @@ class Pago(models.Model):
 
     class Meta:
         db_table = 'Pago'
+"""

@@ -20,6 +20,9 @@ from rest_framework.routers import DefaultRouter
 from ERP.views import *
 
 router = DefaultRouter()
+router.register(r'paises', PaisViewSet, basename='pais')
+router.register(r'departamentos', DepartamentoViewSet, basename='departamento')
+"""
 router.register(r'paises', PaisViewSet)
 router.register(r'departamento', DepartamentoViewSet)
 router.register(r'ciudades', CiudadViewSet)
@@ -44,7 +47,7 @@ router.register(r'detallefactura', DetalleFacturaViewSet)
 router.register(r'metodopago', MetodoPagoViewSet)
 router.register(r'factura', FacturaViewSet)
 router.register(r'pago', PagoViewSet)
-
+"""
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
