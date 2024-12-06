@@ -11,6 +11,60 @@ class DepartamentoSerializer(serializers.Serializer):
     id_departamento = serializers.IntegerField()
     nombre = serializers.CharField(max_length=50, allow_blank=False, allow_null=False)
     id_pais = serializers.IntegerField(allow_null=False)
+
+class CiudadSerializer(serializers.Serializer):
+    id_ciudad = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    id_pais = serializers.IntegerField(allow_null=True)
+    id_departamento = serializers.IntegerField(allow_null=True)
+
+class ColoniaSerializer(serializers.Serializer):
+    id_colonia = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    id_pais = serializers.IntegerField(allow_null=True)
+    id_departamento = serializers.IntegerField(allow_null=True)
+    id_ciudad = serializers.IntegerField(allow_null=True)
+
+class DireccionSerializer(serializers.Serializer):
+    id_direccion = serializers.IntegerField()
+    id_pais = serializers.IntegerField(allow_null=True)
+    id_departamento = serializers.IntegerField(allow_null=True)
+    id_ciudad = serializers.IntegerField(allow_null=True)
+    id_colonia = serializers.IntegerField(allow_null=True)
+
+class MarcaSerializer(serializers.Serializer):
+    id_marca = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+
+class TipoSeguroSerializer(serializers.Serializer):
+    id_tipo_seguro = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+
+class CombustibleSerializer(serializers.Serializer):
+    id_combustible = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+
+
+class EstadoSerializer(serializers.Serializer):
+    id_estado = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+
+class ModeloSerializer(serializers.Serializer):
+    id_modelo = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    id_marca = serializers.IntegerField()
+
+class TipoTransaccionSerializer(serializers.Serializer):
+    id_tipo_transaccion = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+
+class SucursalSerializer(serializers.Serializer):
+    id_sucursal = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    telefono = serializers.IntegerField(allow_null=True)
+    id_direccion = serializers.IntegerField()
+
+
 """
 class PaisSerializer(serializers.ModelSerializer):
     class Meta:
