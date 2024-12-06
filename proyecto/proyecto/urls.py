@@ -22,6 +22,28 @@ from ERP.views import *
 router = DefaultRouter()
 router.register(r'paises', PaisViewSet, basename='pais')
 router.register(r'departamentos', DepartamentoViewSet, basename='departamento')
+router.register(r'ciudades', CiudadViewSet, basename='ciudades')
+router.register(r'colonias', ColoniaViewSet, basename='colonia')
+router.register(r'direcciones', DireccionViewSet, basename='direccion')
+router.register(r'marcas', MarcaViewSet, basename='marca')
+router.register(r'tipo-seguro', TipoSeguroViewSet, basename='tiposeguro')
+router.register(r'combustibles', CombustibleViewSet, basename='combustible')
+router.register(r'modelos', ModeloViewSet, basename='modelo')
+router.register(r'estados', EstadoViewSet, basename='estado')
+router.register(r'tipo_transaccion', TipoTransaccionViewSet, basename='tipotransaccion')
+router.register(r'sucursales', SucursalViewSet, basename='sucursal')
+router.register(r'parqueos', ParqueoViewSet, basename='parqueo')
+router.register(r'usuarios', UsuarioViewSet, basename='usuario')
+router.register(r'clientes', ClienteViewSet, basename='cliente')
+router.register(r'empleados', EmpleadoViewSet, basename='empleado')
+router.register(r'vehiculos', VehiculoViewSet, basename='vehiculo')
+router.register(r'colores', ColorViewSet, basename='color')
+router.register(r'rangos', RangoViewSet, basename='rango')
+router.register(r'sars', SarViewSet, basename='sar')
+router.register(r'detallefactura', DetalleFacturaViewSet, basename='detallefactura')
+router.register(r'metodospago', MetodoPagoViewSet, basename='metodopago')
+router.register(r'facturas', FacturaViewSet, basename='factura')
+router.register(r'pagos', PagoViewSet, basename='pago')
 """
 router.register(r'paises', PaisViewSet)
 router.register(r'departamento', DepartamentoViewSet)
@@ -53,3 +75,5 @@ urlpatterns = [
 ]
 
 urlpatterns += router.urls
+
+

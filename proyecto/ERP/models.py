@@ -136,14 +136,14 @@ class Usuario(models.Model):
 
 
 
-"""""
+
 class Cliente(models.Model):
     id_cliente = models.IntegerField(db_column='Id_cliente', primary_key=True)  
     id_usuario = models.ForeignKey('Usuario', models.CASCADE, db_column='Id_usuario', blank=True, null=True)  
 
     class Meta:
         db_table = 'Cliente'
-"""
+
 class Empleado(models.Model):
     id_empleado = models.IntegerField(db_column='Id_Empleado', primary_key=True)  
     id_usuario = models.ForeignKey('Usuario', models.CASCADE, db_column='Id_usuario', blank=True, null=True)  

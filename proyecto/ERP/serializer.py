@@ -64,6 +64,75 @@ class SucursalSerializer(serializers.Serializer):
     telefono = serializers.IntegerField(allow_null=True)
     id_direccion = serializers.IntegerField()
 
+class ParqueoSerializer(serializers.Serializer):
+    id_parqueo = serializers.IntegerField()
+    lote = serializers.IntegerField(allow_null=True)
+    referencia = serializers.CharField(max_length=100, allow_blank=True, allow_null=True)
+    id_sucursal = serializers.IntegerField()
+
+class VehiculoSerializer(serializers.Serializer):
+    id_vehiculo = serializers.IntegerField()
+    ano = serializers.IntegerField(allow_null=True)
+    vin = serializers.IntegerField(allow_null=True)
+    motor = serializers.IntegerField(allow_null=True)
+    matricula = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    disponibilidad = serializers.BooleanField(allow_null=True)
+    precio = serializers.IntegerField(allow_null=True)
+    id_marca = serializers.IntegerField()
+    id_modelo = serializers.IntegerField()
+    id_estado = serializers.IntegerField()
+    id_tipo_transaccion = serializers.IntegerField()
+    id_combustible = serializers.IntegerField()
+    id_sucursal = serializers.IntegerField()
+    id_parqueo = serializers.IntegerField()
+
+class ColorSerializer(serializers.Serializer):
+    id_color = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, allow_null=True)
+    id_vehiculo = serializers.IntegerField(allow_null=True)
+
+
+class RangoSerializer(serializers.Serializer):
+    id_rango = serializers.IntegerField()
+    inicio = serializers.IntegerField(allow_null=True)
+    fin = serializers.IntegerField(allow_null=True)
+
+
+class SarSerializer(serializers.Serializer):
+    id_sar = serializers.IntegerField()
+    fecha_limite = serializers.DateField(allow_null=True)
+    num_trans = serializers.IntegerField(allow_null=True)
+    id_tipo_transaccion = serializers.IntegerField(allow_null=True)
+    id_rango = serializers.IntegerField(allow_null=True)
+    id_sucursal = serializers.IntegerField(allow_null=True)
+
+class DetalleFacturaSerializer(serializers.Serializer):
+    id_detalle_factura = serializers.IntegerField()
+    descuento = serializers.IntegerField(allow_null=True)
+    id_vehiculo = serializers.IntegerField(allow_null=True)
+
+class MetodoPagoSerializer(serializers.Serializer):
+    id_metodo_pago = serializers.IntegerField()
+    nombre = serializers.CharField(max_length=50, allow_blank=True, required=False)
+
+class FacturaSerializer(serializers.Serializer):
+    id_factura = serializers.IntegerField()
+    fecha_emision = serializers.DateField(allow_null=True)
+    total = serializers.IntegerField(allow_null=True)
+    id_detalle_factura = serializers.IntegerField(allow_null=True)
+    id_tipo_transaccion = serializers.IntegerField(allow_null=True)
+    id_cliente = serializers.IntegerField(allow_null=True)
+    id_empleado = serializers.IntegerField(allow_null=True)
+    id_sar = serializers.IntegerField(allow_null=True)
+
+class PagoSerializer(serializers.Serializer):
+    id_pago = serializers.IntegerField()
+    estado = serializers.BooleanField(allow_null=True)
+    monto = serializers.IntegerField(allow_null=True)
+    fecha_pago = serializers.DateField(allow_null=True)
+    id_factura = serializers.IntegerField(allow_null=True)
+    id_metodo_pago = serializers.IntegerField(allow_null=True)
+
 
 """
 class PaisSerializer(serializers.ModelSerializer):
@@ -138,12 +207,12 @@ class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = '__all__'
-"""
+
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = '__all__'
-"""
+
 class EmpleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empleado
