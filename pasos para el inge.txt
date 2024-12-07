@@ -3,6 +3,12 @@ cree la base de datos que se llame proyecto , o creela y despues la modifica en 
 mis datos de mario umanzor
 :D
 
+el proyecto.bak es backup de la base de datos
+
+
+el proyecto.sql es el query de la base de datos
+
+
 /////para el django
 
 crear virtual enviorement
