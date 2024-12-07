@@ -72,6 +72,12 @@ router.register(r'pago', PagoViewSet)
 """
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('alquiler/', alquiler_vista),
+    path('facturacion/', facturacion_vista),
+    path('landing/', landing_vista),
+    path('login/', login_vista),
+    path('registro/', registro_vista),
+    path('venta/', venta_vista),
 ]
 
 urlpatterns += router.urls

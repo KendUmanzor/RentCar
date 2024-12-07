@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - PUMA Rent Car</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 1rem;
+            margin: 2rem auto;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        form input, form select, form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PUMA RENT CAR</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Venta</a>
+            <a href="#contacto">Alquiler</a>
+        </nav>
+    </header>
+    <main id="inicio">
+        <h2>Registro de Usuario</h2>
+        <p>Llena el siguiente formulario para registrarte en nuestro sistema.</p>
+        <form id="registro">
+            <h3>Datos personales</h3>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="tel" placeholder="Teléfono" required>
+            <input type="password" placeholder="Contraseña" required>
+            
+            <h3>Dirección</h3>
+            <select required>
+                <option value="" disabled selected>Selecciona tu país</option>
+                <!-- Opciones dinámicas desde la base de datos -->
+            </select>
+            <select required>
+                <option value="" disabled selected>Selecciona tu departamento</option>
+                <!-- Opciones dinámicas desde la base de datos -->
+            </select>
+            <select required>
+                <option value="" disabled selected>Selecciona tu ciudad</option>
+                <!-- Opciones dinámicas desde la base de datos -->
+            </select>
+            <select required>
+                <option value="" disabled selected>Selecciona tu colonia</option>
+                <!-- Opciones dinámicas desde la base de datos -->
+            </select>
+            <button type="submit">Registrarse</button>
+        </form>
+    </main>
+    <footer>
+        <p>© 2024 PUMA RENT CAR - Todos los derechos reservados.</p>
+        <p>Proyecto final BD1 Grupo 1 UNAH</p>
+    </footer>
+</body>
+</html>

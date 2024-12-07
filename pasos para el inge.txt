@@ -1,0 +1,19 @@
+/////
+cree la base de datos que se llame proyecto , o creela y despues la modifica en el settings y ahi estan
+mis datos de mario umanzor
+:D
+
+/////para el django
+
+crear virtual enviorement
+python -m venv nombre_del_entorno
+
+activar entorno virtual
+.venv\Scripts\activate
+
+instalar requirements
+
+pip install -r requirements.txt
+
+
+

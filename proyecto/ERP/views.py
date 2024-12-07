@@ -9,6 +9,7 @@ from rest_framework import viewsets, status
 from rest_framework.routers import DefaultRouter
 
 class PaisViewSet(viewsets.ViewSet):
+
     def list(self, request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT Id_pais, Nombre FROM Pais")
@@ -82,7 +83,7 @@ class PaisViewSet(viewsets.ViewSet):
 
 
 class DepartamentoViewSet(viewsets.ViewSet):
-    
+
     def list(self, request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT Id_departamento, Nombre, Id_pais FROM Departamento")
@@ -1840,6 +1841,23 @@ class PagoViewSet(viewsets.ViewSet):
             cursor.execute("DELETE FROM Pago WHERE Id_pago = %s", [pk])
         return Response({"message": "Pago eliminado exitosamente"}, status=204)
 
+def landing_vista(request):
+    return render(request, 'index.html')
+
+def facturacion_vista(request):
+    return render(request, 'Factiracion.html')
+
+def alquiler_vista(request):
+    return render(request, 'alquiler.html')
+
+def login_vista(request):
+    return render(request, 'Login.html')
+
+def registro_vista(request):
+    return render(request, 'registro.html')
+
+def venta_vista(request):
+    return render(request, 'venta.html')
 
 
 """"
